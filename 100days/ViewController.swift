@@ -23,9 +23,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         mainScrollView.frame = view.frame
         
         imageArray = [
-            UIImage(named: "cafe1.jpeg")!,
+            UIImage(named: "cafe3.jpeg")!,
             UIImage(named: "cafe2.jpeg")!,
-            UIImage(named: "cafe3.jpeg")!
+            UIImage(named: "cafe1.jpeg")!
         ]
         
         mainScrollView.delegate = self
