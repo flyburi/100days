@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--mainViewControll-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_00days" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="mainViewControll" id="BYZ-38-t0r" customClass="ViewController" customModule="_00days" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,21 +30,46 @@
                                     <tabBarItem title="설정" id="VW5-vl-xZG"/>
                                 </items>
                             </tabBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LN-7P-owU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LN-7P-owU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="100 Days" id="MSA-yP-fea"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-sp-zeW">
-                                <rect key="frame" x="0.0" y="44" width="375" height="375"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ute-N5-1ow" customClass="MainScrollView">
+                                <rect key="frame" x="0.0" y="60" width="375" height="307"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-dU-dMj">
+                                <rect key="frame" x="168" y="375" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="pageIndicatorTintColor" red="0.4431372549" green="0.65098039220000004" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.92941176469999998" green="0.54901960780000003" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4LN-7P-owU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="574-Rj-nzv"/>
+                            <constraint firstItem="4LN-7P-owU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D7T-0a-5Wy"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="top" secondItem="4LN-7P-owU" secondAttribute="bottom" id="GCb-VR-lBG"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NQ9-7r-Igh"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cGP-Er-v1p"/>
+                            <constraint firstItem="4LN-7P-owU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="efZ-oe-4nx"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fnJ-K2-LIh"/>
+                            <constraint firstAttribute="bottom" secondItem="ute-N5-1ow" secondAttribute="bottom" constant="300" id="lVo-n6-Flq"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nqv-GW-6RS"/>
+                            <constraint firstItem="ute-N5-1ow" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="ppk-Ty-T7w"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="imagePageControl" destination="rzP-dU-dMj" id="moi-hx-US0"/>
+                        <outlet property="mainScrollView" destination="ute-N5-1ow" id="nRy-Ls-O4M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
