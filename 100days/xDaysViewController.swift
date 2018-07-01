@@ -1,21 +1,21 @@
 //
-//  ViewController.swift
+//  100DaysViewController.swift
 //  100days
 //
-//  Created by buri on 2018. 6. 20..
+//  Created by buri on 2018. 7. 1..
 //  Copyright © 2018년 tina. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class xDaysViewController: UIViewController, UIScrollViewDelegate {
+
 
     @IBOutlet weak var mainScrollView: UIScrollView!
     
-    @IBOutlet weak var imagePageControl: UIPageControl!
+    @IBOutlet weak var mainImagePageControl: UIPageControl!
     
     var imageArray = [UIImage]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             let imageView = UIImageView()
             imageView.image = imageArray[i]
             imageView.contentMode = .scaleAspectFit
+            
             let xPosition = self.view.frame.width * CGFloat(i)
             imageView.frame = CGRect(x:xPosition, y:0, width:self.mainScrollView.frame.width,
-                                     height:self.mainScrollView.frame.height)
+                height:self.mainScrollView.frame.height)
             mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
             mainScrollView.addSubview(imageView);
             
@@ -45,14 +46,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = mainScrollView.contentOffset.x / mainScrollView.frame.size.width
-        imagePageControl.currentPage = Int(page)
+        mainImagePageControl.currentPage = Int(page)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
 
-
 }
-
