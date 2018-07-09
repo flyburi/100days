@@ -12,6 +12,7 @@
 		C31B5D8820DA953400741974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31B5D8620DA953400741974 /* Main.storyboard */; };
 		C31B5D8A20DA953400741974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31B5D8920DA953400741974 /* Assets.xcassets */; };
 		C31B5D8D20DA953400741974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31B5D8B20DA953400741974 /* LaunchScreen.storyboard */; };
+		C3389AEA20ED1B03003CAA72 /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3389AE920ED1B03003CAA72 /* AddSubjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C31B5D8920DA953400741974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C31B5D8C20DA953400741974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C31B5D8E20DA953400741974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3389AE920ED1B03003CAA72 /* AddSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				C31B5D8B20DA953400741974 /* LaunchScreen.storyboard */,
 				C31B5D8E20DA953400741974 /* Info.plist */,
 				C301966A20E90F3B00A4813D /* xDaysViewController.swift */,
+				C3389AE920ED1B03003CAA72 /* AddSubjectViewController.swift */,
 			);
 			path = 100days;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3389AEA20ED1B03003CAA72 /* AddSubjectViewController.swift in Sources */,
 				C301966B20E90F3B00A4813D /* xDaysViewController.swift in Sources */,
 				C31B5D8320DA953400741974 /* AppDelegate.swift in Sources */,
 			);

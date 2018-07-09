@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="792.75362318840587" y="26.086956521739133"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Subject View Controller-->
         <scene sceneID="WM0-Lu-ygg">
             <objects>
-                <viewController id="1zM-3g-SXB" sceneMemberID="viewController">
+                <viewController id="1zM-3g-SXB" customClass="AddSubjectViewController" customModule="_00days" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAT-ra-Rip">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,29 +184,23 @@
                                     <constraint firstItem="jkR-0P-lai" firstAttribute="centerY" secondItem="1jg-BP-VPz" secondAttribute="centerY" id="vXr-NY-0oR"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-Kx-KKx">
-                                <rect key="frame" x="20" y="387" width="126" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-Kx-KKx">
+                                <rect key="frame" x="20" y="387" width="182" height="29"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="설명을 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-LR-e1U">
-                                <rect key="frame" x="20" y="433" width="374" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="설명을 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-LR-e1U">
+                                <rect key="frame" x="20" y="432" width="374" height="24"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40U-zd-qnQ">
-                                <rect key="frame" x="20" y="481" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.51961781770000004" green="0.67919070159999995" blue="0.65700627430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-bC-zT6">
-                                <rect key="frame" x="345" y="483" width="51" height="31"/>
+                                <rect key="frame" x="20" y="516" width="376" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxo-Ah-oQA">
-                                <rect key="frame" x="170.66666666666666" y="533" width="74" height="36"/>
+                                <rect key="frame" x="170.66666666666666" y="530" width="74" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="주제 추가">
                                     <color key="titleColor" red="0.51961781770000004" green="0.67919070159999995" blue="0.65700627430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,27 +212,35 @@
                                     <color key="titleColor" red="0.51961781770000004" green="0.67919070159999995" blue="0.65700627430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="시작날짜를 설정해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-9Y-zbA">
+                                <rect key="frame" x="20" y="476" width="374" height="24"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ec4-LR-e1U" firstAttribute="leading" secondItem="40U-zd-qnQ" secondAttribute="leading" id="1In-az-7Ma"/>
                             <constraint firstItem="ehp-Kx-KKx" firstAttribute="leading" secondItem="ZAT-ra-Rip" secondAttribute="leadingMargin" id="1eK-1v-Y7v"/>
-                            <constraint firstItem="cRu-bC-zT6" firstAttribute="top" secondItem="Ec4-LR-e1U" secondAttribute="bottom" constant="20" id="5bq-Fx-GT3"/>
+                            <constraint firstItem="cRu-bC-zT6" firstAttribute="leading" secondItem="hpg-et-7C2" secondAttribute="leading" constant="20" id="1w6-Xn-3ks"/>
                             <constraint firstItem="Ec4-LR-e1U" firstAttribute="top" secondItem="ehp-Kx-KKx" secondAttribute="bottom" constant="16" id="5p7-74-sa6"/>
                             <constraint firstItem="Vxo-Ah-oQA" firstAttribute="centerX" secondItem="ZAT-ra-Rip" secondAttribute="centerX" id="7xR-ao-EJU"/>
                             <constraint firstItem="hpg-et-7C2" firstAttribute="bottom" secondItem="1jg-BP-VPz" secondAttribute="bottom" constant="369" id="9XN-4G-1LO"/>
+                            <constraint firstItem="aWg-9Y-zbA" firstAttribute="top" secondItem="Ec4-LR-e1U" secondAttribute="bottom" constant="20" id="9qo-oe-bq3"/>
                             <constraint firstItem="1jg-BP-VPz" firstAttribute="leading" secondItem="ZAT-ra-Rip" secondAttribute="leading" id="Djv-MF-fcD"/>
-                            <constraint firstItem="Vxo-Ah-oQA" firstAttribute="top" secondItem="Ec4-LR-e1U" secondAttribute="bottom" constant="70" id="G07-Kv-FWK"/>
+                            <constraint firstItem="cRu-bC-zT6" firstAttribute="top" secondItem="Ec4-LR-e1U" secondAttribute="bottom" constant="60" id="EDt-IO-r6P"/>
+                            <constraint firstItem="Vxo-Ah-oQA" firstAttribute="top" secondItem="aWg-9Y-zbA" secondAttribute="bottom" constant="30" id="ILY-SD-luY"/>
                             <constraint firstItem="ehp-Kx-KKx" firstAttribute="top" secondItem="1jg-BP-VPz" secondAttribute="bottom" constant="20" id="IxJ-83-IwJ"/>
                             <constraint firstItem="hpg-et-7C2" firstAttribute="trailing" secondItem="cRu-bC-zT6" secondAttribute="trailing" constant="20" id="Q4f-be-QsZ"/>
                             <constraint firstItem="ehp-Kx-KKx" firstAttribute="leading" secondItem="hpg-et-7C2" secondAttribute="leading" constant="20" id="SEw-n0-VzV"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="40U-zd-qnQ" secondAttribute="trailing" constant="20" symbolic="YES" id="Tda-mm-HP6"/>
                             <constraint firstAttribute="trailing" secondItem="1jg-BP-VPz" secondAttribute="trailing" id="W8k-R9-VxM"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ehp-Kx-KKx" secondAttribute="trailing" constant="20" symbolic="YES" id="XSt-3k-TBA"/>
-                            <constraint firstItem="40U-zd-qnQ" firstAttribute="top" secondItem="Ec4-LR-e1U" secondAttribute="bottom" constant="18" id="Yk1-jd-hNS"/>
+                            <constraint firstItem="hpg-et-7C2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ec4-LR-e1U" secondAttribute="trailing" constant="20" id="awl-tV-BpB"/>
                             <constraint firstItem="hpg-et-7C2" firstAttribute="trailing" secondItem="brq-G5-Jwk" secondAttribute="trailing" constant="3" id="bPB-xN-WDv"/>
                             <constraint firstItem="brq-G5-Jwk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZAT-ra-Rip" secondAttribute="leading" constant="20" symbolic="YES" id="dYi-iD-JK3"/>
+                            <constraint firstItem="hpg-et-7C2" firstAttribute="trailing" secondItem="aWg-9Y-zbA" secondAttribute="trailing" constant="20" id="e7z-eh-erF"/>
                             <constraint firstItem="Ec4-LR-e1U" firstAttribute="leading" secondItem="ehp-Kx-KKx" secondAttribute="leading" id="fLr-Yl-Flw"/>
+                            <constraint firstItem="aWg-9Y-zbA" firstAttribute="leading" secondItem="hpg-et-7C2" secondAttribute="leading" constant="20" id="fQ9-Cl-hyt"/>
                             <constraint firstItem="Ec4-LR-e1U" firstAttribute="centerX" secondItem="1jg-BP-VPz" secondAttribute="centerX" id="gLr-ma-kKB"/>
                             <constraint firstItem="1jg-BP-VPz" firstAttribute="top" secondItem="hpg-et-7C2" secondAttribute="top" constant="41" id="nH6-Us-Syb"/>
                             <constraint firstItem="1jg-BP-VPz" firstAttribute="top" secondItem="brq-G5-Jwk" secondAttribute="bottom" constant="3" id="xaJ-q6-OK5"/>
@@ -246,6 +248,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hpg-et-7C2"/>
                     </view>
+                    <connections>
+                        <outlet property="descTextField" destination="Ec4-LR-e1U" id="9si-9i-ycc"/>
+                        <outlet property="startDateTextField" destination="aWg-9Y-zbA" id="5xc-Bg-KyR"/>
+                        <outlet property="subjectTextField" destination="ehp-Kx-KKx" id="lYu-iD-Wew"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eqn-5Y-tdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

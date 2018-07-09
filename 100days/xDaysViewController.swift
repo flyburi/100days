@@ -32,7 +32,7 @@ class xDaysViewController: UIViewController, UIScrollViewDelegate {
         for i in 0..<imageArray.count{
             let imageView = UIImageView()
             imageView.image = imageArray[i]
-            imageView.contentMode = .scaleAspectFit
+//            imageView.contentMode = .scaleAspectFit
             
             let xPosition = self.view.frame.width * CGFloat(i)
             imageView.frame = CGRect(x:xPosition, y:0, width:self.mainScrollView.frame.width,
