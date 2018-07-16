@@ -159,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-BP-VPz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-BP-VPz" customClass="UIImageView">
                                 <rect key="frame" x="0.0" y="61" width="375" height="237"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-0P-lai">
@@ -168,6 +168,10 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="importImage:" destination="1zM-3g-SXB" eventType="touchUpInside" id="RuJ-9S-UWW"/>
+                                            <action selector="importImage:" destination="5oO-Vy-4FH" eventType="touchUpInside" id="hYU-fn-DNT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 이미지를 넣어주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgW-Lr-K8n">
                                         <rect key="frame" x="85" y="163" width="205" height="24"/>
@@ -206,6 +210,9 @@
                                 <state key="normal" title="주제 추가">
                                     <color key="titleColor" red="0.51961781770000004" green="0.67919070159999995" blue="0.65700627430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:" destination="1zM-3g-SXB" eventType="touchUpInside" id="UNd-72-1iK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brq-G5-Jwk">
                                 <rect key="frame" x="342" y="23" width="30" height="35"/>
@@ -248,12 +255,15 @@
                         <viewLayoutGuide key="safeArea" id="hpg-et-7C2"/>
                     </view>
                     <connections>
+                        <outlet property="activeSwitch" destination="cRu-bC-zT6" id="FaQ-b2-A2D"/>
                         <outlet property="descTextField" destination="Ec4-LR-e1U" id="9si-9i-ycc"/>
+                        <outlet property="myImageView" destination="1jg-BP-VPz" id="PB8-on-Jfb"/>
                         <outlet property="startDateTextField" destination="aWg-9Y-zbA" id="5xc-Bg-KyR"/>
                         <outlet property="subjectTextField" destination="ehp-Kx-KKx" id="lYu-iD-Wew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eqn-5Y-tdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5oO-Vy-4FH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1521.7391304347827" y="31.793478260869566"/>
         </scene>

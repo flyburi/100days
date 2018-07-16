@@ -17,13 +17,36 @@ extension UITextField {
     }
 }
 
-class AddSubjectViewController: UIViewController {
+class AddSubjectViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var myImageView: UIImageView!
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true){
+            //After it is complete
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            myImageView.image = image
+        }else{
+            //ERROR message
+        }
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     @IBOutlet weak var subjectTextField: UITextField!
     
     @IBOutlet weak var descTextField: UITextField!
 
     @IBOutlet weak var startDateTextField: UITextField!
+    
+    @IBOutlet weak var activeSwitch: UISwitch!
     
     let datePicker:UIDatePicker = UIDatePicker()
     
@@ -52,10 +75,55 @@ class AddSubjectViewController: UIViewController {
     
     @objc func doneClicked() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         startDateTextField.text = dateFormatter.string(from: datePicker.date)
+        
+//        dateFormatter.dateStyle = .medium
+//        dateFormatter.timeStyle = .none
+//        startDateTextField.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        
+        Defaults.saveSubjectAndDesc(subjectTextField.text!, descTextField.text!)
+        let subject = Defaults.getSubjectAndDesc.subject
+        let desc = Defaults.getSubjectAndDesc.desc
+        
+        print(subject)
+        print(desc)
+        
+    }
+    
+    struct Defaults {
+        
+        static let (subjectKey, descKey) = ("subject", "desc")
+        static let userSessionKey = "com.save.usersession"
+        
+        struct Model {
+            var subject: String?
+            var desc: String?
+            
+            
+            init(_ json: [String: String]) {
+                self.subject = json[subjectKey]
+                self.desc = json[descKey]
+                
+            }
+        }
+        
+        static var saveSubjectAndDesc = { (subject: String, desc: String) in
+            UserDefaults.standard.set([subjectKey: subject, descKey: desc], forKey: userSessionKey)
+        }
+        
+        static var getSubjectAndDesc = { _ -> Model in
+            return Model((UserDefaults.standard.value(forKey: userSessionKey) as? [String: String]) ?? [:])
+        }(())
+        
+        static func clearUserData(){
+            UserDefaults.standard.removeObject(forKey: userSessionKey)
+        }
     }
     
 }
