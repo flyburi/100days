@@ -86,44 +86,38 @@ class AddSubjectViewController: UIViewController, UINavigationControllerDelegate
     }
     
     @IBAction func save(_ sender: Any) {
+        //TOOD image 
+        let image = myImageView.image!
+        print(image)
         
-        Defaults.saveSubjectAndDesc(subjectTextField.text!, descTextField.text!)
-        let subject = Defaults.getSubjectAndDesc.subject
-        let desc = Defaults.getSubjectAndDesc.desc
+        let subject = subjectTextField.text!
+        let desc = descTextField.text!
+        let startDate = startDateTextField.text!
+        let isActive = activeSwitch.isOn
         
-        print(subject)
-        print(desc)
+        let subjectData = SubjectData(subject: subject, desc: desc, startDate: startDate, isActive: isActive)
+        
+        if let encoded = try? JSONEncoder().encode(subjectData) {
+            UserDefaults.standard.set(encoded, forKey: subject)
+        }
+        
+        if let data = UserDefaults.standard.data(forKey: subject),
+            let sData = try? JSONDecoder().decode(SubjectData.self, from: data) {
+            print(sData)
+            dump(sData)
+        }
+
         
     }
     
-    struct Defaults {
-        
-        static let (subjectKey, descKey) = ("subject", "desc")
-        static let userSessionKey = "com.save.usersession"
-        
-        struct Model {
-            var subject: String?
-            var desc: String?
-            
-            
-            init(_ json: [String: String]) {
-                self.subject = json[subjectKey]
-                self.desc = json[descKey]
-                
-            }
-        }
-        
-        static var saveSubjectAndDesc = { (subject: String, desc: String) in
-            UserDefaults.standard.set([subjectKey: subject, descKey: desc], forKey: userSessionKey)
-        }
-        
-        static var getSubjectAndDesc = { _ -> Model in
-            return Model((UserDefaults.standard.value(forKey: userSessionKey) as? [String: String]) ?? [:])
-        }(())
-        
-        static func clearUserData(){
-            UserDefaults.standard.removeObject(forKey: userSessionKey)
-        }
+    struct SubjectData: Codable {
+//        var image: String
+        var subject: String
+        var desc: String
+        var startDate: String
+        var isActive: Bool
     }
+
+    
     
 }
